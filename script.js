@@ -1,6 +1,6 @@
 const carElement = document.createElement('div')
 const body = document.querySelector('body')
-const tickDuration = 10 // Interwał
+const tickDuration = 10
 const maxAcceleration = 10
 
 let velocity = 0
@@ -33,21 +33,27 @@ setInterval(
     tickDuration
 )
 
-window.addEventListener (
+window.addEventListener(
     'keydown',
-    function(event) {
-        if(event.key === 'a'){
-            acceleration = maxAcceleration
-        } 
+    function (event) {
+      if (event.key === 'a') {
+        acceleration = maxAcceleration
+      }
+      if (event.key === 'b') {
+        acceleration = -maxAcceleration
+      }
     }
-)
-
-window.addEventListener (
+  )
+  
+  window.addEventListener(
     'keyup',
-    function(event) {
-        if(event.key === 'a'){
-            acceleration = 0
-        } 
+    function (event) {
+      if (event.key === 'a') {
+        acceleration = 0
+      }
+      if (event.key === 'b') {
+        acceleration = 0
+      }
     }
-)
-// Odwolanie do przycisku z klawiatury
+  )
+  // Zatrzymanie klawiszem 'b' added - wykorzystano przyspieszenie ujemne
