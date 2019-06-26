@@ -1,5 +1,7 @@
 const carElement = document.createElement('div')
 const body = document.querySelector('body')
+const tickDuration = 100 // Interwał
+const displacementPerTick = 10 // co ile pixeli sie rusza
 let position = 0
 
 
@@ -15,7 +17,7 @@ function applyStylesToCar() {
 }
 
 function move() {
-    position = position + 10
+    position = position + displacementPerTick
     carElement.style.left = position + 'px'
 }
 
@@ -23,6 +25,6 @@ applyStylesToCar()
 
 setInterval(
     move,
-    100
+    tickDuration
 )
 
