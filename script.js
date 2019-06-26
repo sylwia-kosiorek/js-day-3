@@ -19,6 +19,7 @@ function applyStylesToCar() {
 }
 
 function move() {
+    if(!accelerate) return 
     const displacementPerTick = velocity + (tickDuration / 1000)
     position = position + displacementPerTick
     carElement.style.left = position + 'px'
@@ -36,6 +37,15 @@ window.addEventListener (
     function(event) {
         if(event.key === 'a'){
             accelerate = true
+        } 
+    }
+)
+
+window.addEventListener (
+    'keyup',
+    function(event) {
+        if(event.key === 'a'){
+            accelerate = false
         } 
     }
 )
