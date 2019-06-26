@@ -9,7 +9,7 @@ function applyStylesToCar() {
     carElement.style.backgroundColor = 'red'
 
     carElement.style.position = 'absolute'
-    carElement.style.left = '0px'
+    carElement.style.left = position + 'px'
 
     body.appendChild(carElement)
 }
