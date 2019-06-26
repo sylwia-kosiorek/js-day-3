@@ -1,7 +1,9 @@
 const carElement = document.createElement('div')
 const body = document.querySelector('body')
 const tickDuration = 100 // Interwał
-const displacementPerTick = 10 // co ile pixeli sie rusza
+const velocity = 10 // co ile pixeli sie rusza
+
+let accelerate = false
 let position = 0
 
 
@@ -17,6 +19,7 @@ function applyStylesToCar() {
 }
 
 function move() {
+    const displacementPerTick = velocity + (tickDuration / 1000)
     position = position + displacementPerTick
     carElement.style.left = position + 'px'
 }
@@ -28,3 +31,12 @@ setInterval(
     tickDuration
 )
 
+window.addEventListener (
+    'keydown',
+    function(event) {
+        if(event.key === 'a'){
+            accelerate = true
+        } 
+    }
+)
+// Odwolanie do przycisku z klawiatury
