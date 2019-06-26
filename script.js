@@ -1,9 +1,10 @@
 const carElement = document.createElement('div')
 const body = document.querySelector('body')
-const tickDuration = 100 // Interwał
-const velocity = 10 // co ile pixeli sie rusza
+const tickDuration = 10 // Interwał
+const maxAcceleration = 10
 
-let accelerate = false
+let velocity = 0
+let acceleration = 0
 let position = 0
 
 
@@ -19,9 +20,9 @@ function applyStylesToCar() {
 }
 
 function move() {
-    if(!accelerate) return 
-    const displacementPerTick = velocity + (tickDuration / 1000)
-    position = position + displacementPerTick
+    const time = tickDuration / 1000
+    position = position + velocity * time + (acceleration * time * time) / 2
+    velocity = velocity + acceleration * time
     carElement.style.left = position + 'px'
 }
 
@@ -36,7 +37,7 @@ window.addEventListener (
     'keydown',
     function(event) {
         if(event.key === 'a'){
-            accelerate = true
+            acceleration = maxAcceleration
         } 
     }
 )
@@ -45,7 +46,7 @@ window.addEventListener (
     'keyup',
     function(event) {
         if(event.key === 'a'){
-            accelerate = false
+            acceleration = 0
         } 
     }
 )
