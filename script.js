@@ -3,7 +3,7 @@ const body = document.querySelector('body')
 let position = 0
 
 
-function createCar() {
+function applyStylesToCar() {
     carElement.style.width = '100px'
     carElement.style.height = '100px'
     carElement.style.backgroundColor = 'red'
@@ -19,7 +19,7 @@ function move() {
     carElement.style.left = position + 'px'
 }
 
-createCar()
+applyStylesToCar()
 
 setInterval(
     move,
