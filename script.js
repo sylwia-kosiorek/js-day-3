@@ -1,5 +1,9 @@
 const carElement = document.createElement ('div')
 // Stworzenie elementu w HTML
+const body = document.querySelector('body')
+// Do zmiennej zapisuje referencje, ktora odpowiada utworzonemu elementowi
+let position = 0
+// Zmienna zapisujaca pozycje
 
 carElement.style.width = '100px'
 carElement.style.height = '100px'
@@ -10,14 +14,9 @@ carElement.style.position ='absolute'
 carElement.style.left = '0px'
 // Pozycja elementu
 
-const body = document.querySelector('body')
-// Do zmiennej zapisuje referencje, ktora odpowiada utworzonemu elementowi
-
 body.appendChild(carElement)
 // Utworzony child - element wyswietla sie na naszej stronie
 
-let position = 0
-// Zmienna zapisujaca pozycje
 
 setInterval (
     function () {
