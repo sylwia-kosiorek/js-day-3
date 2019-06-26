@@ -7,7 +7,11 @@ function add (a, b) {
 }
 
 function multiply (a, b){
-    return a * b
+    let sum = 0
+    for(let i = 0; i<b; i++) {
+        sum = sum + a
+    }
+    return sum
 }
 
 function square (a){
