@@ -21,7 +21,7 @@ body.appendChild(carElement)
 setInterval (
     function () {
         position = position + 10
-        carElement.style.left = position + 'px'
+        carElement.style.left = position + 'px' // Funkcja jest tutaj anonimowac
     },
     100
 )
